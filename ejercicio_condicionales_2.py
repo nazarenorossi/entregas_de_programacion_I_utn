@@ -1,22 +1,19 @@
 """ 
+Calcular una nota aleatoria entre el 1 y el 10 inclusive, para luego mostrar un mensaje según el valor:
 
-Una agencia de viajes nos pide informar si hacemos viajes a lugares según la estación del año. 
-En caso de hacerlo mostrar por print  el mensaje “Se viaja”, caso contrario mostrar “No se viaja”. 
-Si es invierno: solo se viaja a Bariloche.
-Si es verano: se viaja a Mar del plata y Cataratas.
-Si es otoño: se viaja a todos los lugares.
-Si es primavera: se viaja a todos los lugares menos Bariloche.
+. 6, 7, 8, 9 y 10  ---> Promoción directa, la nota es ...
+. 4 y 5                ---> Aprobado, la nota es ...
+. 1, 2 y 3            ---> Desaprobado, la nota es ... 
 
- """
+"""
 
-estacion = input("Ingrese una estación del año: ")
+nota_aleatoria = int(input("Ingrese una nota: "))
 
-match estacion:
-    case "verano": 
-        print ("Se viaja a Mar del Plata y Cataratas.")
-    case "otoño":
-        print ("Se viaja a Mar del Plata, Cataratas, Bariloche.")
-    case "invierno":
-        print ("Se viaja a Bariloche.")
-    case "primavera":
-        print ("Se viaja a Mar del Plata y Cataratas.")
+if nota_aleatoria >= 6 and nota_aleatoria < 11:
+    print (f"Su nota es {nota_aleatoria}, y promociona directamente.")
+elif nota_aleatoria > 4 and nota_aleatoria < 6:
+    print (f"Su nota es {nota_aleatoria} y está aprobada.")
+elif nota_aleatoria < 3 and nota_aleatoria > 0:
+    print (f"Su nota es {nota_aleatoria} y está desaprobada.")
+else:
+    print ("Error. Ingrese un número válido. Vuelva a ejecutar el programa.")
